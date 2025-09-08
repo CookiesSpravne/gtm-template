@@ -1,0 +1,167 @@
+# General
+.DS_Store
+Thumbs.db
+Icon?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.orig
+*.rej
+*.pid
+*.seed
+*.pid.lock
+
+# Archives
+*.zip
+*.tar
+*.tgz
+*.gz
+*.rar
+
+# OS-specific
+$RECYCLE.BIN/
+.DS_Store?
+
+# Editor directories and files
+.vscode/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.iml
+*.ipr
+*.iws
+*.sublime-project
+*.sublime-workspace
+
+# Node
+node_modules/
+.npm/
+.pnpm-store/
+.eslintcache
+.cache/
+dist/
+build/
+coverage/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+.venv/
+venv/
+.env
+.env.*
+.python-version
+
+# Ruby
+.bundle/
+vendor/bundle/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.ser
+*.class
+.target/
+
+# Go
+bin/
+*.test
+
+# PHP/Composer
+vendor/
+composer.lock
+
+# C/C++
+*.o
+*.obj
+*.so
+*.dll
+*.dylib
+*.lib
+*.exe
+*.out
+*.a
+*.la
+*.lo
+*.idb
+*.pdb
+*.mod
+
+# Rust
+/target/
+Cargo.lock
+
+# Kotlin/Gradle
+.gradle/
+build/
+*.kotlin_module
+
+# Swift/Xcode
+*.xcworkspace/
+*.xcuserdatad/
+*.xcuserdata/
+DerivedData/
+
+# Haskell/Cabal/Stack
+.stack-work/
+.dist-newstyle/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+
+# Images cache (common)
+*.thumb
+
+# Project-specific suggestions
+# Ignore local GTM or export artifacts
+*.tpl.backup
+*.tpl.bak
+*.tpl.tmp
+
+# Misc
+*.local
+*.secret
+secrets.*
+*.key
+*.crt
+
+# Git
+.gitignore.local
+.gitattributes.local
+
+# WSL/Unix
+*~
+.ssh/
+.cache/
+
+# Lock files (optional; uncomment to ignore as needed)
+# package-lock.json
+# yarn.lock
