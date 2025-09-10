@@ -14,7 +14,10 @@ ___INFO___
   "version": 1,
   "securityGroups": [],
   "displayName": "Cookies Správně",
-  "categories": ["TAG_MANAGEMENT", "PERSONALIZATION"],
+  "categories": [
+    "TAG_MANAGEMENT",
+    "PERSONALIZATION"
+  ],
   "brand": {
     "id": "brand_dummy",
     "displayName": "",
@@ -84,6 +87,7 @@ const gtagSet = require("gtagSet");
 const getCookieValues = require("getCookieValues");
 const updateConsentState = require("updateConsentState");
 const dataLayerPush = require('createQueue')('dataLayer');
+const logToConsole = require('logToConsole');
 
 let setDefaultSetting = true;
 const regionSettings = data.regionSettings || [];
@@ -149,12 +153,16 @@ for (let index = 0; index < regionSettings.length; index++) {
 
 const consentString = getCookieValues("cc_cookie", false)[0];
 if (consentString && typeof consentString === "string") {
-  const cookieObj = {};
+  let cookieObj = {};
   const consentObj = JSON.parse(consentString);
-  for (let i = 0; i < consentObj.level; i++) {
-    cookieObj[consentObj.level[i]] = true;
+  logToConsole(consentObj);
+  logToConsole(consentObj.level);
+  for (let i = 0; i < consentObj.level.length; i++) {
+    cookieObj[consentObj.level[i]] = 'granted';
   }
 
+  logToConsole(cookieObj);
+  
   const updatedConsents = {
     ad_storage: cookieObj.marketing || 'denied',
     analytics_storage: cookieObj.analytics || 'denied',
@@ -171,7 +179,7 @@ if (consentString && typeof consentString === "string") {
   dataLayerPush(updatedConsents);
 }
 
-let scriptURL = "https://cookies-spravne.cz/static/cc_v2?key" + data.licenseKey;
+let scriptURL = "https://cookies-spravne.cz/static/cc_v2?key=" + data.licenseKey;
 if (data.language) {
   scriptURL += '&lang=' + data.language;
 }
@@ -251,7 +259,23 @@ ___WEB_PERMISSIONS___
         "publicId": "inject_script",
         "versionId": "1"
       },
-      "param": []
+      "param": [
+        {
+          "key": "urls",
+          "value": {
+            "type": 2,
+            "listItem": [
+              {
+                "type": 1,
+                "string": "https://cookies-spravne.cz/static/cc*"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "clientAnnotations": {
+      "isEditedByUser": true
     },
     "isRequired": true
   },
@@ -421,6 +445,68 @@ ___WEB_PERMISSIONS___
                     "boolean": true
                   }
                 ]
+              },
+              {
+                "type": 3,
+                "mapKey": [
+                  {
+                    "type": 1,
+                    "string": "consentType"
+                  },
+                  {
+                    "type": 1,
+                    "string": "read"
+                  },
+                  {
+                    "type": 1,
+                    "string": "write"
+                  }
+                ],
+                "mapValue": [
+                  {
+                    "type": 1,
+                    "string": "ad_user_data"
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  }
+                ]
+              },
+              {
+                "type": 3,
+                "mapKey": [
+                  {
+                    "type": 1,
+                    "string": "consentType"
+                  },
+                  {
+                    "type": 1,
+                    "string": "read"
+                  },
+                  {
+                    "type": 1,
+                    "string": "write"
+                  }
+                ],
+                "mapValue": [
+                  {
+                    "type": 1,
+                    "string": "ad_personalization"
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  }
+                ]
               }
             ]
           }
@@ -490,6 +576,24 @@ ___WEB_PERMISSIONS___
     },
     "clientAnnotations": {
       "isEditedByUser": true
+    },
+    "isRequired": true
+  },
+  {
+    "instance": {
+      "key": {
+        "publicId": "logging",
+        "versionId": "1"
+      },
+      "param": [
+        {
+          "key": "environments",
+          "value": {
+            "type": 1,
+            "string": "debug"
+          }
+        }
+      ]
     },
     "isRequired": true
   }
