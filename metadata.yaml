@@ -1,7 +1,7 @@
 homepage: "https://cookies-spravne.cz"
 documentation: "https://docs.cookies-spravne.cz"
 versions:
-  - sha: 87accd1724082c6559e7d5b0aee531503283fdb2
+  - sha: fe0ef599532611f24ca1667c2b6578d1f67446c4
     changeNotes: v1.2 Add developerId
   - sha: 05cff1d8bec175dd15e499a22ebf7bc58623e2ae
     changeNotes: v1.1
