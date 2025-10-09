@@ -108,14 +108,14 @@ const logToConsole = require('logToConsole');
 
 let setDefaultSetting = true;
 const regionSettings = data.regionSettings || [];
-const waitForTime = data.waitForTime;
+const waitForUpdate = data.waitForUpdate;
 
 function getConsentStateForCategory(categoryConsent) {
   return categoryConsent === "yes" ? "granted" : "denied";
 }
 
 function setConsentInitStates(consentData) {
-  if (waitForTime > 0) consentData.wait_for_update = waitForTime;
+  if (waitForUpdate > 0) consentData.wait_for_update = waitForUpdate;
   setDefaultConsentState(consentData);
 }
 
