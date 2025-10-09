@@ -88,7 +88,7 @@ ___TEMPLATE_PARAMETERS___
         "type": "NON_NEGATIVE_NUMBER"
       }
     ],
-    "defaultValue": 0
+    "defaultValue": 500
   }
 ]
 
