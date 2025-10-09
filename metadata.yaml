@@ -1,6 +1,8 @@
 homepage: "https://cookies-spravne.cz"
 documentation: "https://docs.cookies-spravne.cz"
 versions:
+  - sha: 95b01a6320028b8a83199f80319c1677c4ab79d3
+    changeNotes: v1.3 Fix issues with waitForUpdate variable
   - sha: 9ef023b03bf56d75190f5ed6e86a4c11827e7f5b
     changeNotes: v1.2 Add developerId
   - sha: 05cff1d8bec175dd15e499a22ebf7bc58623e2ae
