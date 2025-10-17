@@ -1,6 +1,8 @@
 homepage: "https://cookies-spravne.cz"
 documentation: "https://docs.cookies-spravne.cz"
 versions:
+  - sha: 336c8fac1f6d651f392302dcdacf9c73841f5aac
+    changeNotes: v2.1 fix error with missing variables
   - sha: 7cdf3ee94fe6dbcbb3247e82f24212539253bbf8
     changeNotes: v2 fix errors
   - sha: 95b01a6320028b8a83199f80319c1677c4ab79d3
