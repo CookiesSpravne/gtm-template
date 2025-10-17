@@ -119,7 +119,7 @@ function setConsentInitStates(consentData) {
 gtagSet({
   ads_data_redaction: !!data.adsRedaction,
   url_passthrough: !!data.urlPassThrough,
-  developer_id.dMGM1ZD = true
+  developer_id.dMGM1ZD: true
 });
 
 /*
