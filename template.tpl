@@ -11,13 +11,10 @@ ___INFO___
 {
   "type": "TAG",
   "id": "cvt_temp_public_id",
-  "version": 1,
+  "version": 2,
   "securityGroups": [],
   "displayName": "Cookies Správně",
-  "categories": [
-    "TAG_MANAGEMENT",
-    "PERSONALIZATION"
-  ],
+  "categories": ["TAG_MANAGEMENT", "PERSONALIZATION"],
   "brand": {
     "id": "brand_dummy",
     "displayName": "",
@@ -88,7 +85,7 @@ ___TEMPLATE_PARAMETERS___
         "type": "NON_NEGATIVE_NUMBER"
       }
     ],
-    "defaultValue": 0
+    "defaultValue": 500
   }
 ]
 
@@ -107,22 +104,22 @@ const dataLayerPush = require('createQueue')('dataLayer');
 const logToConsole = require('logToConsole');
 
 let setDefaultSetting = true;
-const regionSettings = data.regionSettings || [];
-const waitForTime = data.waitForTime;
+const regionSettings = [];
+const waitForUpdate = data.waitForUpdate;
 
 function getConsentStateForCategory(categoryConsent) {
   return categoryConsent === "yes" ? "granted" : "denied";
 }
 
 function setConsentInitStates(consentData) {
-  if (waitForTime > 0) consentData.wait_for_update = waitForTime;
+  if (waitForUpdate > 0) consentData.wait_for_update = waitForUpdate;
   setDefaultConsentState(consentData);
 }
 
 gtagSet({
   ads_data_redaction: !!data.adsRedaction,
   url_passthrough: !!data.urlPassThrough,
-  developer_id.dMGM1ZD: true
+  developer_id.dMGM1ZD = true
 });
 
 /*
