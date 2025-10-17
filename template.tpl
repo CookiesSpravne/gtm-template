@@ -11,10 +11,13 @@ ___INFO___
 {
   "type": "TAG",
   "id": "cvt_temp_public_id",
-  "version": 2,
+  "version": 1,
   "securityGroups": [],
   "displayName": "Cookies Správně",
-  "categories": ["TAG_MANAGEMENT", "PERSONALIZATION"],
+  "categories": [
+    "TAG_MANAGEMENT",
+    "PERSONALIZATION"
+  ],
   "brand": {
     "id": "brand_dummy",
     "displayName": "",
@@ -86,6 +89,20 @@ ___TEMPLATE_PARAMETERS___
       }
     ],
     "defaultValue": 500
+  },
+  {
+    "type": "CHECKBOX",
+    "name": "adsRedaction",
+    "checkboxText": "Ads Redaction",
+    "simpleValueType": true,
+    "defaultValue": false
+  },
+  {
+    "type": "CHECKBOX",
+    "name": "urlPassThrough",
+    "checkboxText": "URL Pass Through",
+    "simpleValueType": true,
+    "defaultValue": false
   }
 ]
 
@@ -116,11 +133,9 @@ function setConsentInitStates(consentData) {
   setDefaultConsentState(consentData);
 }
 
-gtagSet({
-  ads_data_redaction: !!data.adsRedaction,
-  url_passthrough: !!data.urlPassThrough,
-  developer_id.dMGM1ZD: true
-});
+gtagSet('ads_data_redaction', !!data.adsRedaction);
+gtagSet('url_passthrough', !!data.urlPassThrough);
+gtagSet('developer_id.dMGM1ZD', true);
 
 /*
  *
