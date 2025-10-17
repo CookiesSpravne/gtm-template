@@ -1,6 +1,8 @@
 homepage: "https://cookies-spravne.cz"
 documentation: "https://docs.cookies-spravne.cz"
 versions:
+  - sha: f46e479696920b3d93726bc3259d02d52a5c93da
+    changeNotes: v2.2 fix dataLayer permissions
   - sha: 336c8fac1f6d651f392302dcdacf9c73841f5aac
     changeNotes: v2.1 fix error with missing variables
   - sha: 7cdf3ee94fe6dbcbb3247e82f24212539253bbf8
@@ -15,4 +17,5 @@ versions:
     changeNotes: v1
   - sha: ed839dba8ce41e7fabeac6f0f5f68bcddf839138
     changeNotes: Initial release.
+
 
